@@ -1,0 +1,21 @@
+<serverapp *ngFor="let ser of servers"></serverapp>
+
+
+<h3 [ngStyle]="{backgroundColor: getColor()}" >    
+    I am another server with {{ serverId}} and {{ serverName 
+    }} and is {{ serverStatus}}
+</h3>
+
+<button class="btn btn-primary"
+(click)="onCreateServer()">Add Server</button>
+<!-- <p>{{ createServer }}</p> -->
+
+<p *ngIf="createServer">Server was created , server name is {{ serverName }}</p>
+
+
+<input type="text" class="form-control"
+(input)="onUpdatedServerName($event)">
+
+
+<input type="text" class="form-control"
+[(ngModel)]="serverName"/>
